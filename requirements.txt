@@ -6,4 +6,3 @@ datetime
 pandas
 time
 requests
-python-dateutil
