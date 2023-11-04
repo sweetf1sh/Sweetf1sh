@@ -1,9 +1,9 @@
+streamlit
 numpy
-scipy.optimize
-scipy.interpolate
+scipy
 matplotlib
 datetime
 pandas
 time
 requests
-dateutil
+python-dateutil
