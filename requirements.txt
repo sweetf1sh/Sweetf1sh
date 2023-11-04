@@ -4,5 +4,4 @@ scipy
 matplotlib
 datetime
 pandas
-time
 requests
