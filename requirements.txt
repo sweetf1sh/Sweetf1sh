@@ -1,0 +1,10 @@
+streamlit
+numpy
+scipy.optimize
+scipy.interpolate
+matplotlib
+datetime
+pandas
+time
+requests
+dateutil
