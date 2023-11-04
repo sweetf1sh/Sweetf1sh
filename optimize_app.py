@@ -5,6 +5,7 @@ import scipy.interpolate as sci
 import matplotlib as mpl
 import japanize_matplotlib
 import matplotlib.pyplot as plt
+import time
 import datetime
 import pandas as pd
 from scipy.stats import norm
@@ -23,7 +24,7 @@ def get_nav_fund(fundcode, use_ratio=False):
     start, end: datetime object
     """
     # Get fund data from https://www.am.mufg.jp/
-    # time.sleep(1) # アクセス規制を避けるため
+    time.sleep(1) # アクセス規制を避けるため
     url = "https://www.am.mufg.jp/fund_file/setteirai/"+ fundcode +".csv"
     df = pd.read_csv(url, encoding="shift_jis", skiprows=1)
     df['基準日'] = pd.to_datetime(df['基準日'])
@@ -106,9 +107,11 @@ NAVdata = st.sidebar.button("データ取得") # データ取得ボタン
 #ファンドコードとファンド名をリストにまとめておく
 FundCds = [FundCd1, FundCd2, FundCd3, FundCd4, FundCd5, FundCd6, FundCd7, FundCd8, FundCd9, FundCd10]
 FundNames = []
-for fc in FundCds:
+try:
+    for fc in FundCds:
         FundNamei = Fundname(fc, code_list)
         FundNames.append(FundNamei)
+except: st.write("ファンド名が取得できません。")
 
 if NAVdata:
     return_df = get_paneldata_fund(FundCds, start, end, use_ratio=True) * 100 # 百分率に換算
