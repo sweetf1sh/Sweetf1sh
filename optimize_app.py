@@ -212,7 +212,7 @@ if optimize:
      st.write("推定リスク（％）: " + str(np.sqrt(minimize_vol(opts["x"]))))
      st.write("シャープレシオ: " + str(-maximize_SR(opts["x"])))
      fig, ax = plt.subplots()
-     plt.rcParams["font.family"] = "IPAGothic"
+     #plt.rcParams["font.family"] = "Yu Gothic"
      plt.pie(opts["x"], labels=FundNames, autopct="%1.1f %%")
      st.pyplot(fig) 
 
