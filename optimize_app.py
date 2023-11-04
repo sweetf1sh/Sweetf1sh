@@ -3,11 +3,11 @@ import numpy as np
 import scipy.optimize as sco
 import scipy.interpolate as sci
 import matplotlib as mpl
+import japanize_matplotlib
 import matplotlib.pyplot as plt
 import datetime
 import pandas as pd
 from scipy.stats import norm
-import time
 import requests
 from dateutil.relativedelta import relativedelta
 
